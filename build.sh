@@ -10,9 +10,9 @@ cd ..
 cd suppl
 git branch -M main
 git add booru.js
-git config user.email "47060357+jdadonut@users.noreply.github.com"
-git config user.name "Github Workflow"
+git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git config --local user.name "github-actions[bot]"
 git commit booru.js -m "Automagic commit."
-git remote remove origin
-git remote add origin https://jdadonut:$1github.com/jdadonut/booru-browser-supplements.git
+# git remote remove origin
+# git remote add origin https://github.com/jdadonut/booru-browser-supplements.git
 git push --set-upstream origin main
