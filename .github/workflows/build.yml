@@ -12,26 +12,22 @@ jobs:
           
       # - run: export TOKEN=${{secrets.GITHUB_TOKEN}}
       - run: |
-      cd ..
-      git clone https://github.com/jdadonut/booru
-      git clone https://github.com/jdadonut/booru-browser-supplements ./suppl
-      cd booru
-      npm i
-      tsc
-      webpack
-      mv ./pack/booru.js ../suppl
-      cd ..
-      cd suppl
-      git branch -M main
-      git add booru.js
-      git config --local user.email "47060357+jdadonut@users.noreply.github.com"
-      git config --local user.name "github-actions[bot]"
-      git commit booru.js -m "Automagic commit."
-      # git remote remove origin
-      # git remote add origin https://github.com/jdadonut/booru-browser-supplements.git
-      [ -z "${TOKEN}" ] && {
-          echo 'Missing input "github_token: ${{ secrets.GITHUB_TOKEN }}".';
-          exit 1;
-      };
+      cd .. \
+      git clone https://github.com/jdadonut/booru \
+      git clone https://github.com/jdadonut/booru-browser-supplements ./suppl \
+      cd booru \
+      npm i \
+      tsc \
+      webpack \
+      mv ./pack/booru.js ../suppl \
+      cd .. \
+      cd suppl \
+      git branch -M main \
+      git add booru.js \
+      git config --local user.email "47060357+jdadonut@users.noreply.github.com" \
+      git config --local user.name "github-actions[bot]" \
+      git commit booru.js -m "Automagic commit." \
+      # git remote remove origin \
+      # git remote add origin https://github.com/jdadonut/booru-browser-supplements.git \
       git push "https://jdadonut:${{ secrets.}}@github.com/jdadonut/booru-browser-supplements.git" HEAD:main
   
