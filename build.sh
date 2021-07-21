@@ -7,7 +7,7 @@ tsc
 webpack
 mv ./pack/booru.js ../suppl
 cd ..
-cd supl
+cd suppl
 git add booru.js
 git commit booru.js -m "Automagic commit."
 git push 
