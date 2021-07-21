@@ -15,4 +15,8 @@ git config --local user.name "github-actions[bot]"
 git commit booru.js -m "Automagic commit."
 # git remote remove origin
 # git remote add origin https://github.com/jdadonut/booru-browser-supplements.git
+[ -z "${TOKEN}" ] && {
+    echo 'Missing input "github_token: ${{ secrets.GITHUB_TOKEN }}".';
+    exit 1;
+};
 git push "https://jdadonut:${TOKEN}@github.com/jdadonut/booru-browser-supplements.git" HEAD:main
