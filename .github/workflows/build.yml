@@ -9,8 +9,10 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
       - run: export TOKEN=${{secrets.GITHUB_TOKEN}}
       - run: sh build.sh
+      - with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   
