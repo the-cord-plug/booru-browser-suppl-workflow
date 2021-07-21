@@ -29,5 +29,5 @@ jobs:
           git commit booru.js -m "Automagic commit." \
           # git remote remove origin \
           # git remote add origin https://github.com/jdadonut/booru-browser-supplements.git \
-          git push "https://jdadonut:${{ secrets.}}@github.com/jdadonut/booru-browser-supplements.git" HEAD:main
+          git push "https://jdadonut:${{ secrets.GITHUB_TOKEN }}@github.com/jdadonut/booru-browser-supplements.git" HEAD:main
   
