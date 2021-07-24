@@ -1,0 +1,30 @@
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+          
+      # - run: export TOKEN=${{secrets.GITHUB_TOKEN}}
+      - run: |
+          cd .. &&\
+          git clone https://github.com/jdadonut/node-ytdl-core ./ytdl &&\
+          git clone https://github.com/jdadonut/ytdl-pack ./ytdl-suppl &&\
+          cd .. &&\
+          cd ytdl &&\
+          npm i &&\
+          webpack &&\
+          mv ./pack/ytdl.js ../ytdl-suppl &&\
+          cd .. &&\
+          cd ytdl-suppl &&\
+          git branch -M main &&\
+          git add ytdl.js &&\
+          git config --local user.email "47060357+jdadonut@users.noreply.github.com" &&\
+          git config --local user.name "Jai L." &&\
+          git commit ytdl.js -m "Automagic commit." &&\
+          git push "https://jdadonut:${{ secrets.PUSHKEY }}@github.com/jdadonut/ytdl-pack.git" HEAD:main
