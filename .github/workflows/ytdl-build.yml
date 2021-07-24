@@ -15,7 +15,6 @@ jobs:
           cd .. &&\
           git clone https://github.com/jdadonut/node-ytdl-core ./ytdl &&\
           git clone https://github.com/jdadonut/ytdl-pack ./ytdl-suppl &&\
-          cd .. &&\
           cd ytdl &&\
           npm i &&\
           webpack &&\
