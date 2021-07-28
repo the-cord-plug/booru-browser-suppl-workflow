@@ -13,8 +13,8 @@ jobs:
       # - run: export TOKEN=${{secrets.GITHUB_TOKEN}}
       - run: |
           cd .. &&\
-          git clone https://github.com/jdadonut/node-ytdl-core ./ytdl &&\
-          git clone https://github.com/jdadonut/ytdl-pack ./ytdl-suppl &&\
+          git clone https://github.com/the-cord-plug/node-ytdl-core ./ytdl &&\
+          git clone https://github.com/the-cord-plug/ytdl-pack ./ytdl-suppl &&\
           cd ytdl &&\
           npm i &&\
           webpack &&\
@@ -26,4 +26,4 @@ jobs:
           git config --local user.email "47060357+jdadonut@users.noreply.github.com" &&\
           git config --local user.name "Jai L." &&\
           git commit ytdl.js -m "Automagic commit." &&\
-          git push "https://jdadonut:${{ secrets.PUSHKEY }}@github.com/jdadonut/ytdl-pack.git" HEAD:main
+          git push "https://jdadonut:${{ secrets.PUSHKEY }}@github.com/the-cord-plug/ytdl-pack.git" HEAD:main
